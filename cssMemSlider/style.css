@@ -3,6 +3,9 @@ body {
     background-color: #dcdcdc;
     color: #ffff;
 }
+
+/* ===================== MAIN ===================== */
+
 .slider-container {
     padding: 7vh;
     height: 86vh;
@@ -23,7 +26,7 @@ body {
 input[name="slide"] {
     display: none;
 }
-.meme-slider {
+.slider {
     width: 400%;
     height: 80%;
     display: flex;
@@ -41,11 +44,11 @@ input[name="slide"] {
     max-width: 100%;
     max-height: 100%;
 }
-.bottom-panel {
+.nav {
     display: flex;
     padding: 0 3vh;
 }
-.captions-container {
+.nav-captions {
     overflow: hidden;
     width: 400%;
     display: flex;
@@ -80,6 +83,9 @@ input[name="slide"] {
     border: 0.2rem solid #F4D03F;
     transition: all 0.4s;
 }
+
+/* ===================== ANIMATION ===================== */
+
 .control:hover .marker {
     border: 0.15rem solid #D68910;
 }
@@ -87,58 +93,61 @@ input[name="slide"] {
     border: 0.15rem solid #D68910;
     box-shadow: 0 0 0.9rem 0.3rem #48856b, 0 0 0.7rem 0.2rem #F9E79F, 0 0 0.5rem 0.1rem #F9E79F;
 }
-#slide1:checked ~ .bottom-panel .controls-container .control .marker-1,
-#slide2:checked ~ .bottom-panel .controls-container .control .marker-2,
-#slide3:checked ~ .bottom-panel .controls-container .control .marker-3,
-#slide4:checked ~ .bottom-panel .controls-container .control .marker-4 {
+#slide1:checked ~ .nav .controls-container .control .marker-1,
+#slide2:checked ~ .nav .controls-container .control .marker-2,
+#slide3:checked ~ .nav .controls-container .control .marker-3,
+#slide4:checked ~ .nav .controls-container .control .marker-4 {
     background-color: #FCF3CF;
     box-shadow: 0 0 0.2rem 0.1rem #F1C40F;
 }
-#slide1:checked ~ .bottom-panel .controls-container .control:active .marker-1,
-#slide2:checked ~ .bottom-panel .controls-container .control:active .marker-2,
-#slide3:checked ~ .bottom-panel .controls-container .control:active .marker-3,
-#slide4:checked ~ .bottom-panel .controls-container .control:active .marker-4 {
+#slide1:checked ~ .nav .controls-container .control:active .marker-1,
+#slide2:checked ~ .nav .controls-container .control:active .marker-2,
+#slide3:checked ~ .nav .controls-container .control:active .marker-3,
+#slide4:checked ~ .nav .controls-container .control:active .marker-4 {
     background-color: #FCF3CF;
     border: 0.15rem solid #b8860b;
     box-shadow: 0 0 0.9rem 0.3rem #F1C40F, 0 0 0.7rem 0.2rem #F1C40F, 0 0 0.5rem 0.1rem #F9E79F;
 }
-#slide1:checked ~ .meme-slider .meme-container {
+#slide1:checked ~ .slider .meme-container {
     transform: translateX(0);
 }
-#slide2:checked ~ .meme-slider .meme-container {
+#slide2:checked ~ .slider .meme-container {
     transform: translateX(-100%);
 }
-#slide3:checked ~ .meme-slider .meme-container {
+#slide3:checked ~ .slider .meme-container {
     transform: translateX(-200%);
 }
-#slide4:checked ~ .meme-slider .meme-container {
+#slide4:checked ~ .slider .meme-container {
     transform: translateX(-300%);
 }
-#slide1:checked ~ .bottom-panel .captions-container .caption {
+#slide1:checked ~ .nav .nav-captions .caption {
     transform: translateX(0);
 }
-#slide2:checked ~ .bottom-panel .captions-container .caption {
+#slide2:checked ~ .nav .nav-captions .caption {
     transform: translateX(-100%);
 }
-#slide3:checked ~ .bottom-panel .captions-container .caption {
+#slide3:checked ~ .nav .nav-captions .caption {
     transform: translateX(-200%);
 }
-#slide4:checked ~ .bottom-panel .captions-container .caption {
+#slide4:checked ~ .nav .nav-captions .caption {
     transform: translateX(-300%);
 }
-#slide1:checked ~ .bottom-panel .captions-container .caption:nth-child(1),
-#slide2:checked ~ .bottom-panel .captions-container .caption:nth-child(2),
-#slide3:checked ~ .bottom-panel .captions-container .caption:nth-child(3),
-#slide4:checked ~ .bottom-panel .captions-container .caption:nth-child(4) {
+#slide1:checked ~ .nav .nav-captions .caption:nth-child(1),
+#slide2:checked ~ .nav .nav-captions .caption:nth-child(2),
+#slide3:checked ~ .nav .nav-captions .caption:nth-child(3),
+#slide4:checked ~ .nav .nav-captions .caption:nth-child(4) {
     color: #fff;
     text-shadow: 0 0 0.1rem #fff;
 }
+
+/* ===================== MOBILE ===================== */
+
 @media screen and (max-width: 540px) {
-    .bottom-panel {
+    .nav {
         flex-direction: column;
         row-gap: 5vh;
     }
-    .captions-container {
+    .nav-captions {
         order: 2;
         width: 100%;
     }
